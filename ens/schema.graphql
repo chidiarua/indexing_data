@@ -1,0 +1,45 @@
+type ENSToken_Approval {
+  id: ID!
+  owner: String!
+  spender: String!
+  value: BigInt!
+}
+
+type ENSToken_Claim {
+  id: ID!
+  claimant: String!
+  amount: BigInt!
+}
+
+type ENSToken_DelegateChanged {
+  id: ID!
+  delegator: String!
+  fromDelegate: String!
+  toDelegate: String!
+}
+
+type ENSToken_DelegateVotesChanged {
+  id: ID!
+  delegate: String!
+  previousBalance: BigInt!
+  newBalance: BigInt!
+}
+
+type ENSToken_MerkleRootChanged {
+  id: ID!
+  merkleRoot: String!
+}
+
+type ENSToken_OwnershipTransferred {
+  id: ID!
+  previousOwner: String!
+  newOwner: String!
+}
+
+type ENSToken_Transfer {
+  id: ID!
+  from: String!
+  to: String!
+  value: BigInt!
+}
+

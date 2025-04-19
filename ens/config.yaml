@@ -1,0 +1,19 @@
+# yaml-language-server: $schema=./node_modules/envio/evm.schema.json
+name: ens
+networks:
+- id: 1
+  start_block: 0
+  contracts:
+  - name: ENSToken
+    address:
+    - 0xC18360217D8F7Ab5e7c516566761Ea12Ce7F9D72
+    handler: ./src/EventHandlers.js
+    events:
+    - event: Approval(address indexed owner, address indexed spender, uint256 value)
+    - event: Claim(address indexed claimant, uint256 amount)
+    - event: DelegateChanged(address indexed delegator, address indexed fromDelegate, address indexed toDelegate)
+    - event: DelegateVotesChanged(address indexed delegate, uint256 previousBalance, uint256 newBalance)
+    - event: MerkleRootChanged(bytes32 merkleRoot)
+    - event: OwnershipTransferred(address indexed previousOwner, address indexed newOwner)
+    - event: Transfer(address indexed from, address indexed to, uint256 value)
+unordered_multichain_mode: true
